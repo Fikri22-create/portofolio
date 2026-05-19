@@ -115,7 +115,7 @@ const ContactForm = ({ onSuccess }) => {
           value={form.email}
           onChange={update('email')}
           className="cf-input"
-          placeholder="fikri@gmail.com"
+          placeholder="fikri@example.com"
         />
       </Field>
 
