@@ -97,7 +97,13 @@ const ContactForm = ({ onSuccess }) => {
   return (
     <form
       onSubmit={onSubmit}
-      className="glass-strong rounded-3xl p-6 md:p-8 space-y-5"
+      className="rounded-3xl p-6 md:p-8 space-y-5"
+      style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
+        border: '1px solid rgba(167,139,250,0.18)',
+      }}
     >
       <Field label="Your name" error={errors.name}>
         <input
@@ -143,32 +149,6 @@ const ContactForm = ({ onSuccess }) => {
           </>
         )}
       </button>
-
-      <style>{`
-        .cf-input{
-          width:100%;
-          padding:.85rem 1rem;
-          border-radius:1rem;
-          background:rgba(255,255,255,.03);
-          border:1px solid rgba(255,255,255,.08);
-          color:#fff;
-          font-size:.875rem;
-          outline:none;
-          transition:all .25s ease;
-        }
-
-        .cf-input::placeholder{
-          color:#64748b;
-        }
-
-        .cf-input:focus{
-          border-color:rgba(34,211,238,.55);
-          background:rgba(255,255,255,.05);
-          box-shadow:
-            0 0 0 4px rgba(34,211,238,.08),
-            0 10px 30px rgba(34,211,238,.08);
-        }
-      `}</style>
     </form>
   );
 };

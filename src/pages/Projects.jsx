@@ -53,7 +53,7 @@ const Projects = () => {
               ))}
             </div>
             <div className="flex gap-2 pt-2">
-              <a href={active.github} target="_blank" rel="noreferrer" className="btn-ghost flex-1 justify-center"><FaGithub /> Source</a>
+            <a href={active.github} target="_blank" rel="noreferrer" className="btn-ghost flex-1 justify-center"><FaGithub /> Source</a>
               <a href={active.demo} target="_blank" rel="noreferrer" className="btn-primary flex-1 justify-center"><HiOutlineArrowTopRightOnSquare /> Live Demo</a>
             </div>
           </div>
