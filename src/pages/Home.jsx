@@ -52,7 +52,7 @@ const Home = () => (
           variants={fadeUp}
           className="mt-6 text-lg text-slate-400 max-w-xl leading-relaxed"
         >
-          {PROFILE.tagline.slice(0, 140)}…
+          {PROFILE.tagline}
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
