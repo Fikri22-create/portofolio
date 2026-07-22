@@ -7,7 +7,6 @@ import { EDUCATION } from '../data/experience';
 const About = () => (
   <div className="space-y-16">
     <section className="grid md:grid-cols-[280px_1fr] gap-10 items-start">
-      {/* Photo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -22,7 +21,6 @@ const About = () => (
           }}
         >
           <img src={PROFILE.foto} alt={PROFILE.name} className="w-full h-full object-cover" />
-          {/* Overlay gradient */}
           <div
             className="absolute inset-0"
             style={{
@@ -30,7 +28,6 @@ const About = () => (
             }}
           />
         </div>
-        {/* Glow behind photo */}
         <div
           className="absolute -inset-4 rounded-3xl -z-10 opacity-30"
           style={{
@@ -39,8 +36,6 @@ const About = () => (
           }}
         />
       </motion.div>
-
-      {/* Info */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -52,7 +47,7 @@ const About = () => (
         />
         <p className="mt-5 text-slate-400 leading-relaxed">
           I'm {PROFILE.name}, a student at SMK Wikrama Bogor specializing in Full Stack Web Development.
-          I have experience building web applications using React, Tailwind CSS, and Laravel, with projects
+          I have experience building web applications using React, Express.js, Tailwind CSS, and Laravel, with projects
           including a Quran application, e-commerce, and a ticket booking system. I'm interested in modern
           web development, responsive UI, and continuously developing my technical skills.
         </p>
@@ -66,12 +61,9 @@ const About = () => (
         </div>
       </motion.div>
     </section>
-
-    {/* Education timeline */}
     <section>
       <SectionTitle eyebrow="Background" title="Education" />
       <div className="mt-8 relative pl-6 space-y-8">
-        {/* Timeline line */}
         <div
           className="absolute left-0 top-0 bottom-0 w-px"
           style={{
@@ -87,7 +79,6 @@ const About = () => (
             transition={{ delay: i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            {/* Timeline dot */}
             <motion.span
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}

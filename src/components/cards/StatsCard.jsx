@@ -30,7 +30,6 @@ const StatsCard = ({ stat, index }) => (
       backdropFilter: 'blur(16px)',
     }}
   >
-    {/* Glow accent top-right */}
     <div
       className="absolute -top-6 -right-6 w-20 h-20 rounded-full opacity-40"
       style={{

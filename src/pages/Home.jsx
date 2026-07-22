@@ -8,7 +8,6 @@ import { fadeUp, stagger, skillContainer, skillItem } from '../animations/varian
 
 const Home = () => (
   <div className="space-y-24">
-    {/* Hero */}
     <section className="relative pt-6">
       <motion.div
         variants={stagger}
@@ -16,7 +15,6 @@ const Home = () => (
         animate="visible"
         className="max-w-3xl"
       >
-        {/* Available badge */}
         <motion.div variants={fadeUp}>
           <span
             className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-full"
@@ -36,8 +34,6 @@ const Home = () => (
             Available for new opportunities
           </span>
         </motion.div>
-
-        {/* Heading */}
         <motion.h1
           variants={fadeUp}
           className="font-display text-5xl md:text-7xl font-semibold mt-6 leading-[1.05] text-white"
@@ -64,8 +60,6 @@ const Home = () => (
           </Link>
         </motion.div>
       </motion.div>
-
-      {/* Scroll hint */}
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2.5, repeat: Infinity }}
@@ -74,8 +68,6 @@ const Home = () => (
       >
         scroll <HiOutlineArrowDown />
       </motion.div>
-
-      {/* Decorative floating orb behind hero */}
       <div
         className="pointer-events-none absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full -z-10 opacity-20"
         style={{
@@ -84,17 +76,13 @@ const Home = () => (
         }}
       />
     </section>
-
-    {/* About intro */}
     <section>
       <SectionTitle
         eyebrow="About"
         title="A short intro"
-        description={`${PROFILE.experienceYears}+ years building responsive web and mobile applications using React, Laravel, Flutter, and modern web technologies.`}
+        description={`${PROFILE.experienceYears}+ years building responsive web and mobile applications using React, Express.js, Laravel, Flutter, and modern web technologies.`}
       />
     </section>
-
-    {/* Skills */}
     <section>
       <SectionTitle eyebrow="Stack" title="Tools that I have used" />
 
@@ -113,7 +101,6 @@ const Home = () => (
             whileHover={{ y: -3, scale: 1.05 }}
             className="group relative inline-flex"
           >
-            {/* Glow blob on hover */}
             <div
               className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
@@ -151,8 +138,6 @@ const Home = () => (
         ))}
       </motion.div>
     </section>
-
-    {/* CTA */}
     <section className="flex justify-center">
       <motion.div
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
@@ -166,7 +151,6 @@ const Home = () => (
           backdropFilter: 'blur(20px)',
         }}
       >
-        {/* Decorative corners */}
         <div
           className="absolute top-0 left-0 w-24 h-24 rounded-br-full opacity-30"
           style={{ background: 'radial-gradient(circle, rgba(85,111,247,0.4), transparent)' }}

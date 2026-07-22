@@ -84,7 +84,6 @@ const ParticleCanvas = () => {
 
 const AnimatedBackground = () => (
   <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    {/* Aurora blobs */}
     <div
       className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-25 animate-float"
       style={{
@@ -111,7 +110,6 @@ const AnimatedBackground = () => (
       }}
     />
 
-    {/* Rotating ring accent */}
     <div
       className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-[0.05] animate-spin-slow"
       style={{
@@ -125,8 +123,6 @@ const AnimatedBackground = () => (
         animation: 'spin-slow 15s linear infinite reverse',
       }}
     />
-
-    {/* Dot grid with radial fade */}
     <div
       className="absolute inset-0 opacity-[0.04]"
       style={{
@@ -136,8 +132,6 @@ const AnimatedBackground = () => (
         maskImage: 'radial-gradient(ellipse at center, black 25%, transparent 70%)',
       }}
     />
-
-    {/* Particle canvas */}
     <ParticleCanvas />
   </div>
 );

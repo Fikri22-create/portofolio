@@ -33,7 +33,6 @@ const Messages = () => {
           animate="visible"
           className="space-y-4"
         >
-          {/* Email card */}
           <motion.div
             variants={fadeUp}
             className="rounded-2xl p-5"
@@ -51,44 +50,6 @@ const Messages = () => {
               {PROFILE.email}
             </a>
           </motion.div>
-
-          {/* WhatsApp card */}
-          <motion.a
-            variants={fadeUp}
-            href={`https://wa.me/${PROFILE.whatsapp}`}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-2xl p-5 flex items-center gap-4 group transition-all duration-300 block"
-            style={{
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              backdropFilter: 'blur(16px)',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'rgba(74,222,128,0.4)';
-              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(74,222,128,0.08), rgba(74,222,128,0.03))';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))';
-            }}
-          >
-            <div
-              className="w-12 h-12 rounded-xl grid place-items-center text-xl shrink-0 transition-all duration-300"
-              style={{
-                background: 'rgba(74,222,128,0.1)',
-                color: '#4ade80',
-              }}
-            >
-              <FaWhatsapp />
-            </div>
-            <div>
-              <p className="text-white font-medium">Chat on WhatsApp</p>
-              <p className="text-xs text-slate-400">Usually replies in a few hours</p>
-            </div>
-          </motion.a>
-
-          {/* Socials card */}
           <motion.div
             variants={fadeUp}
             className="rounded-2xl p-5"

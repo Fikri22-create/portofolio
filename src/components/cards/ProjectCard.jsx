@@ -34,14 +34,12 @@ const ProjectCard = ({ project, onOpen }) => (
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        {/* Gradient overlay */}
         <div
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(to top, rgba(6,6,18,0.95) 0%, rgba(6,6,18,0.4) 50%, transparent 100%)',
           }}
         />
-        {/* Category badge */}
         <span
           className="absolute top-3 left-3 text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full font-mono"
           style={{
@@ -53,7 +51,6 @@ const ProjectCard = ({ project, onOpen }) => (
         >
           {project.category}
         </span>
-        {/* Hover overlay */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 grid place-items-center"
           style={{ background: 'rgba(6,6,18,0.6)', backdropFilter: 'blur(4px)' }}

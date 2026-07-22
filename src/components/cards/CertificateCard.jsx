@@ -25,7 +25,7 @@ const CertificateCard = ({ certificate, onOpen, index }) => (
       e.currentTarget.style.boxShadow = 'none';
     }}
   >
-    {/* Subtle top accent line */}
+
     <div
       className="absolute top-0 left-0 right-0 h-px opacity-60"
       style={{ background: 'linear-gradient(90deg, transparent, rgba(85,111,247,0.6), transparent)' }}

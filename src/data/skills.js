@@ -18,10 +18,14 @@ import {
   SiTailwindcss,
   SiTrello,
   SiVercel,
-  SiXampp
+  SiXampp,
+  SiExpress,
+  SiWordpress,
+  SiPython,
+  SiElementor,
 } from "react-icons/si";
 
-import { TbApi, TbBrandVscode } from "react-icons/tb";
+import { TbApi, TbBrandVscode, TbBrain } from "react-icons/tb";
 
 export const TOOLS = [
   { name: "HTML", icon: SiHtml5, color: "#e34f26" },
@@ -30,14 +34,19 @@ export const TOOLS = [
   { name: "PHP", icon: SiPhp, color: "#777bb4" },
   { name: "React.js", icon: SiReact, color: "#61dafb" },
   { name: "Laravel", icon: SiLaravel, color: "#ff2d20" },
+  { name: "express.js", icon: SiExpress, color: "#FFFFFF" },
   { name: "TailwindCss", icon: SiTailwindcss, color: "#38bdf8" },
   { name: "Bootstrap", icon: SiBootstrap, color: "#7952b3" },
   { name: "MySQL", icon: SiMysql, color: "#00758f" },
+  { name: "python", icon: SiPython, color: "#3776ab" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MongoDB", icon: SiMongodb, color: "#47a248" },
+  { name: "Artificial Intelligence", icon: TbBrain, color: "#3776ab" },
   { name: "Flutter", icon: SiFlutter, color: "#02569b" },
+  { name: "WordPress", icon: SiWordpress, color: "#21759b" },
   { name: "REST API", icon: TbApi, color: "#10b981" },
   { name: "Git", icon: SiGit, color: "#f1502f" },
+  { name: "Elementor", icon: SiElementor, color: "#a259ff" },
   { name: "Github", icon: SiGithub, color: "#ffffff" },
   { name: "Vercel", icon: SiVercel, color: "#ffffff" },
   { name: "Figma", icon: SiFigma, color: "#a259ff" },

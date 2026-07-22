@@ -21,5 +21,9 @@ export const PROJECTS = [
     description: 'Project Court Booking is a Flutter-based mobile app that functions as a sports field booking system (such as futsal). The app allows users to view a list of fields, select a booking duration, and make a booking through a simple and user-friendly UI.',
     image: '/kumprojects/CB.png', tags: ['Flutter'],
     github: 'https://github.com/Fikri22-create/court-booking.git', demo: '' },
+  { id: 4, title: 'Roomora', category: 'Web',
+    description: 'Developed a full-stack room booking management system from scratch by building responsive front-end interfaces, implementing backend functionality, managing database operations, and creating an efficient booking workflow. The system allows users to view available rooms, check availability, and make bookings through a user-friendly interface. It also includes an admin panel for managing room data, booking requests, and user accounts.',
+    image: '/kumprojects/roomora.png', tags: ['express', 'React', 'TailwindCSS', 'MySQL', 'API', 'JWT', 'Vite'],
+    github: 'https://github.com/Fikri22-create/booking-room.git', demo: '' },
 ];
 

@@ -22,7 +22,6 @@ const Sidebar = () => {
         boxShadow: '4px 0 30px rgba(0,0,0,0.3), inset -1px 0 0 rgba(85,111,247,0.06)',
       }}
     >
-      {/* Header */}
       <div
         className="flex items-center justify-between p-5"
         style={{ borderBottom: '1px solid rgba(85,111,247,0.12)' }}
@@ -65,8 +64,6 @@ const Sidebar = () => {
           <HiOutlineChevronLeft className={cn('transition-transform duration-300', collapsed && 'rotate-180')} />
         </button>
       </div>
-
-      {/* Nav */}
       <nav className="flex-1 px-3 py-6 space-y-1">
         {NAV_ITEMS.map(({ label, path, icon: Icon }) => (
           <NavLink
@@ -122,8 +119,6 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </nav>
-
-      {/* Footer card */}
       {!collapsed && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -140,9 +135,11 @@ const Sidebar = () => {
               className="w-2 h-2 rounded-full animate-pulse-glow"
               style={{ background: 'linear-gradient(135deg, #556FF7, #38bdf8)', boxShadow: '0 0 8px rgba(85,111,247,0.8)' }}
             />
-            <p className="text-white font-medium">Available for work</p>
+            <p className="text-white font-medium">Work as a</p>
           </div>
-          <p>Open to full-stack roles (remote or on-site)<br />{PROFILE.location}</p>
+          <p>Brand Marketing and Communications Intern at TMS Consulting<br />
+            {/* {PROFILE.location} */}
+          </p>
         </motion.div>
       )}
     </motion.aside>
