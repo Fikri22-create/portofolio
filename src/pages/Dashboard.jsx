@@ -14,9 +14,9 @@ const SeeMoreLink = ({ to, label = 'See more' }) => (
     <Link
       to={to}
       className="inline-flex items-center gap-1.5 text-xs font-medium transition-all duration-200"
-      style={{ color: '#a78bfa' }}
-      onMouseEnter={e => { e.currentTarget.style.color = '#c4b5fd'; }}
-      onMouseLeave={e => { e.currentTarget.style.color = '#a78bfa'; }}
+      style={{ color: '#6366f1' }}
+      onMouseEnter={e => { e.currentTarget.style.color = '#818cf8'; }}
+      onMouseLeave={e => { e.currentTarget.style.color = '#6366f1'; }}
     >
       {label}
       <HiOutlineArrowRight className="text-sm" />
@@ -25,17 +25,18 @@ const SeeMoreLink = ({ to, label = 'See more' }) => (
 );
 
 const Dashboard = () => {
-  const previewProjects = PROJECTS.slice(0, 3);
+  const previewProjects    = PROJECTS.slice(0, 3);
   const previewCertificates = CERTIFICATES.slice(0, 3);
 
   return (
     <div className="space-y-14">
 
+
       <div>
         <SectionTitle
           eyebrow="Overview"
           title="Dashboard"
-          description="A quick overview of recent projects, and the certifications I recently obtained."
+          description="A quick overview of recent projects and certifications."
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
           {STATS.map((s, i) => (
@@ -44,21 +45,23 @@ const Dashboard = () => {
         </div>
       </div>
 
+
       <div>
         <div className="flex items-end justify-between mb-6">
           <SectionTitle
             eyebrow="Projects"
             title="Recent Work"
-            description="Some selected projects I've built recently."
+            description="Selected projects I've built recently."
           />
           <SeeMoreLink to="/projects" />
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {previewProjects.map((p) => (
-            <ProjectCard key={p.id} project={p} onOpen={() => {}} />
+            <ProjectCard key={p.id + p.title} project={p} onOpen={() => {}} />
           ))}
         </div>
       </div>
+
 
       <div>
         <div className="flex items-end justify-between mb-6">
