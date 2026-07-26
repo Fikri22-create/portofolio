@@ -34,7 +34,7 @@ const Certificates = () => {
       >
         {active && (
           <div className="space-y-4">
-            <div className="w-full h-[80vh] bg-black rounded-2xl overflow-hidden">
+            <div className="w-full h-[50vh] sm:h-[80vh] bg-black rounded-2xl overflow-hidden">
               <iframe
                 src={`${active.file}#toolbar=0&view=FitH&zoom=page-width`}
                 className="w-full h-full"
@@ -42,7 +42,7 @@ const Certificates = () => {
               />
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 justify-between">
               <p className="text-xs text-slate-400">
                 {active.description}
               </p>

@@ -6,13 +6,13 @@ const MarqueeItem = ({ skill }) => {
   const { name, icon: Icon, color } = skill;
 
   return (
-    <div className="relative py-2 px-1">
+    <div className="relative py-1.5 px-0.5 sm:px-1">
       <motion.div
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
         whileHover={{ y: -3, scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-        className="group relative flex items-center gap-3 px-4 py-2.5 rounded-2xl transition-all duration-300 select-none cursor-default"
+        className="group relative flex items-center gap-2.5 sm:gap-3 px-3 py-2 sm:px-4 sm:py-2.5 rounded-2xl transition-all duration-300 select-none cursor-default"
         style={{
           background:     'rgba(19,23,31,0.6)',
           border:         '1px solid rgba(255,255,255,0.07)',
@@ -43,7 +43,7 @@ const MarqueeItem = ({ skill }) => {
           <Icon style={{ color }} className="text-sm" />
         </div>
 
-        <span className="text-[12px] font-medium tracking-wide text-ink-secondary group-hover:text-white transition-colors duration-200 whitespace-nowrap">
+        <span className="text-[11px] sm:text-[12px] font-medium tracking-wide text-ink-secondary group-hover:text-white transition-colors duration-200 whitespace-nowrap">
           {name}
         </span>
       </motion.div>
@@ -94,7 +94,7 @@ const SkillsMarquee = ({ skills = [] }) => {
   const row3 = skills.slice(rowCount * 2);
 
   return (
-    <div className="space-y-4 py-8 w-full max-w-5xl mx-auto overflow-hidden">
+    <div className="space-y-3 sm:space-y-4 py-6 sm:py-8 w-full max-w-5xl mx-auto overflow-hidden px-1 sm:px-0">
 
       <MarqueeRow skills={row1} direction="right" />
 

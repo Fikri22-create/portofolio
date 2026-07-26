@@ -1,6 +1,6 @@
 import { PROJECTS } from './projects';
 import { CERTIFICATES } from './certificates';
-import { PROFILE } from '../constants/profile';
+import { getYearsOfExperience, getExperienceTrend } from '../constants/experience';
 
 export const STATS = [
   {
@@ -15,7 +15,7 @@ export const STATS = [
   },
   {
     label: 'Years of Experience',
-    value: PROFILE.experienceYears,
-    trend: 'Active',
+    value: getYearsOfExperience(),
+    trend: getExperienceTrend(),
   },
 ];

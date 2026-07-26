@@ -3,9 +3,11 @@ import { HiOutlineArrowDownTray, HiOutlineMapPin } from 'react-icons/hi2';
 import SectionTitle from '../components/common/SectionTitle';
 import { PROFILE } from '../constants/profile';
 import { EDUCATION } from '../data/experience';
+import { getYearsOfExperience } from '../constants/experience';
+import { TOOLS } from '../data/skills';
 
 const About = () => (
-  <div className="space-y-16">
+  <div className="space-y-12 md:space-y-16">
 
 
     <section className="grid md:grid-cols-[260px_1fr] gap-10 items-start">
@@ -66,9 +68,9 @@ const About = () => (
 
         <div className="mt-6 flex flex-wrap gap-4">
           {[
-            { label: 'Years Exp.', value: `${PROFILE.experienceYears}+` },
+            { label: 'Years Exp.', value: `${getYearsOfExperience()}+` },
             { label: 'Projects',   value: '6+' },
-            { label: 'Stacks',     value: '27+' },
+            { label: 'Stacks',     value: `${TOOLS.length}+` },
           ].map(({ label, value }) => (
             <div
               key={label}
@@ -98,7 +100,7 @@ const About = () => (
 
     <section>
       <SectionTitle eyebrow="Background" title="Education" />
-      <div className="mt-10 relative pl-6 space-y-10">
+      <div className="mt-10 relative pl-5 sm:pl-6 space-y-8 md:space-y-10">
 
         <div
           className="absolute left-0 top-0 bottom-0 w-px"
@@ -122,7 +124,7 @@ const About = () => (
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 + 0.2, type: 'spring', stiffness: 320 }}
-              className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full"
+              className="absolute -left-[27px] sm:-left-[31px] top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full"
               style={{
                 background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
                 boxShadow:  '0 0 12px rgba(99,102,241,0.6)',

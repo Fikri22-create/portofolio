@@ -75,7 +75,7 @@ const Messages = () => {
             >
               Social
             </p>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-4 sm:grid-cols-4 gap-2">
               {SOCIALS.map(({ name, url, icon: Icon }) => (
                 <a
                   key={name}

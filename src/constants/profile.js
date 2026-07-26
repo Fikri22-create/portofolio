@@ -8,5 +8,4 @@ export const PROFILE = {
   whatsapp: '6288905945277',
   github: 'https://github.com/Fikri22-create',
   linkedin: 'https://www.linkedin.com/in/muhammadfikrialfarizi/',
-  experienceYears: 2,
 };

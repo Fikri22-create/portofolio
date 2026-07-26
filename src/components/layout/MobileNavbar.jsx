@@ -5,13 +5,14 @@ import { cn } from '../../utils/cn';
 
 const MobileNavbar = () => (
   <nav
-    className="md:hidden fixed bottom-3 left-3 right-3 z-50 rounded-2xl px-2 py-2 flex justify-between"
+    className="md:hidden fixed bottom-2 left-2 right-2 z-50 mx-auto max-w-[calc(100vw-1rem)] rounded-2xl px-1.5 py-2 flex items-center justify-between gap-1"
     style={{
       background: 'linear-gradient(135deg, rgba(13,16,23,0.92) 0%, rgba(8,9,13,0.95) 100%)',
       backdropFilter: 'blur(28px)',
       WebkitBackdropFilter: 'blur(28px)',
       border: '1px solid rgba(255,255,255,0.07)',
       boxShadow: '0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(99,102,241,0.04)',
+      paddingBottom: 'calc(0.5rem + env(safe-area-inset-bottom))',
     }}
   >
     {NAV_ITEMS.map(({ label, path, icon: Icon }) => (
@@ -19,7 +20,7 @@ const MobileNavbar = () => (
         key={path}
         to={path}
         end={path === '/'}
-        className="flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-xl text-[10px] transition-all duration-200 relative"
+        className="flex-1 min-w-0 flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-xl text-[10px] transition-all duration-200 relative"
       >
         {({ isActive }) => (
           <>

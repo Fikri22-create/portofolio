@@ -6,7 +6,7 @@ const EmptyState = ({ title = 'Nothing here yet', description }) => (
     initial={{ opacity: 0, y: 16 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="rounded-2xl p-14 text-center"
+    className="rounded-2xl p-8 sm:p-14 text-center"
     style={{
       background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(19,23,31,0.7))',
       border:     '1px solid rgba(99,102,241,0.15)',

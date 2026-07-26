@@ -9,11 +9,18 @@ const Modal = ({ open, onClose, children, title }) => {
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
+
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[60] grid place-items-center p-4"
+          className="fixed inset-0 z-[60] grid place-items-center p-4 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -28,13 +35,14 @@ const Modal = ({ open, onClose, children, title }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 14, scale: 0.97 }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full max-w-2xl rounded-3xl overflow-hidden"
+            className="relative w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col mx-2 sm:mx-4"
             style={{
               background:        'linear-gradient(135deg, rgba(19,23,31,0.92) 0%, rgba(13,16,23,0.95) 100%)',
               backdropFilter:    'blur(28px)',
               WebkitBackdropFilter: 'blur(28px)',
               border:            '1px solid rgba(99,102,241,0.2)',
               boxShadow:         '0 0 60px rgba(99,102,241,0.08), 0 40px 80px rgba(0,0,0,0.7)',
+              maxHeight:         '90vh',
             }}
           >
 
@@ -45,7 +53,7 @@ const Modal = ({ open, onClose, children, title }) => {
 
 
             <div
-              className="flex items-center justify-between px-6 py-4"
+              className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 flex-shrink-0"
               style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
             >
               <h3 className="font-display text-lg font-semibold" style={{ color: '#f1f2f4' }}>{title}</h3>
@@ -67,7 +75,7 @@ const Modal = ({ open, onClose, children, title }) => {
               </button>
             </div>
 
-            <div className="p-6">{children}</div>
+            <div className="p-4 sm:p-6 overflow-y-auto" style={{ flex: '1 1 0%', minHeight: 0 }}>{children}</div>
           </motion.div>
         </motion.div>
       )}

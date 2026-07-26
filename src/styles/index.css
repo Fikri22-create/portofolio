@@ -6,6 +6,12 @@
 html, body, #root { height: 100%; }
 html { scroll-behavior: smooth; }
 
+html, body { overflow-x: hidden; }
+
+@media (pointer: coarse) {
+  .group\/slider button { opacity: 1 !important; }
+}
+
 body {
   @apply bg-bg text-ink-secondary font-sans antialiased;
   background-image:
@@ -129,15 +135,22 @@ body {
   .marquee-container {
     @apply flex overflow-hidden select-none w-full relative;
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
   .marquee-content {
-    @apply flex shrink-0 items-center justify-around gap-4 min-w-full;
+    @apply flex shrink-0 items-center justify-around gap-3 sm:gap-4 min-w-max;
   }
   .marquee-content-left {
-    animation: marquee-left 30s linear infinite;
+    animation: marquee-left 40s linear infinite;
   }
   .marquee-content-right {
-    animation: marquee-right 30s linear infinite;
+    animation: marquee-right 40s linear infinite;
+  }
+  @media (max-width: 640px) {
+    .marquee-content-left,
+    .marquee-content-right {
+      animation-duration: 28s;
+    }
   }
   .marquee-container:hover .marquee-content {
     animation-play-state: paused;

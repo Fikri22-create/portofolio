@@ -9,7 +9,7 @@ const CertificateCard = ({ certificate, onOpen, index }) => (
     viewport={{ once: true }}
     transition={{ delay: index * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     whileHover={{ y: -6 }}
-    className="group relative overflow-hidden rounded-2xl text-left w-full neon-border"
+    className="group relative overflow-hidden rounded-2xl text-left w-full min-w-0 neon-border"
     style={{
       background:     'linear-gradient(145deg, rgba(19,23,31,0.85) 0%, rgba(13,16,23,0.75) 100%)',
       backdropFilter: 'blur(16px)',

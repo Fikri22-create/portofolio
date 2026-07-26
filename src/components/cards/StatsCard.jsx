@@ -23,7 +23,7 @@ const StatsCard = ({ stat, index }) => (
     viewport={{ once: true }}
     transition={{ delay: index * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     whileHover={{ y: -4, scale: 1.02 }}
-    className="relative rounded-2xl p-6 overflow-hidden"
+    className="relative rounded-2xl p-4 sm:p-6 overflow-hidden"
     style={{
       background: CARD_GRADIENTS[index % 4],
       border:     '1px solid rgba(255,255,255,0.07)',
@@ -40,7 +40,7 @@ const StatsCard = ({ stat, index }) => (
     <p className="text-[11px] uppercase tracking-widest font-mono relative z-10" style={{ color: '#4a5568' }}>
       {stat.label}
     </p>
-    <p className="font-display text-3xl mt-2 relative z-10" style={{ color: '#f1f2f4' }}>
+    <p className="font-display text-2xl sm:text-3xl mt-2 relative z-10" style={{ color: '#f1f2f4' }}>
       {stat.value}
     </p>
     <span
