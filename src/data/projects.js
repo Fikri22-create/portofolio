@@ -27,6 +27,10 @@ export const PROJECTS = [
     github: [{ name: 'Repo BE & FE  ', url: 'https://github.com/Fikri22-create/booking-room.git' }], demo: '' },
   { id: 7, title: 'IT Helpdesk', category: 'Web',
     description: 'Helpdesk is an internal web-based IT support system that allows employees to report technical issues and enables administrators to manage complaints, update resolutions, and monitor support activities through a centralized dashboard. Built with React, Node.js, Express, Prisma, and MySQL.',
-    images: ['/kumprojects/helpdesk/landingpage.png', '/kumprojects/helpdesk/signin.png', '/kumprojects/helpdesk/ds_admin.png', '/kumprojects/helpdesk/ds_user.png'], tags: ['React', 'TailwindCSS','Vite'],
+    images: ['/kumprojects/helpdesk/landingpage.png', '/kumprojects/helpdesk/signin.png', '/kumprojects/helpdesk/ds_admin.png', '/kumprojects/helpdesk/ds_user.png'], tags: ['React', 'TailwindCSS','Vite', 'express', 'Node.js', 'Prisma', 'MySQL', 'JWT'],
     github: [{ name: 'Repo FE', url: 'https://github.com/Fikri22-create/FE-TMS-Helpdesk.git' }, { name: 'Repo BE', url: 'https://github.com/Fikri22-create/TMS-Helpdesk.git' }], demo: '' },
+  { id: 8, title: 'TMS Company', category: 'Web',
+    description: 'Redesigned the official TMS Consulting website during my internship using React and Tailwind CSS, focusing on modern UI/UX, responsive design, and improved navigation while preserving the original company content.',
+    images: ['/kumprojects/TMS/landingpage.png', '/kumprojects/TMS/about.png', '/kumprojects/TMS/services.png', '/kumprojects/TMS/caseStudies.png', '/kumprojects/TMS/blogs.png'], tags: ['React', 'TailwindCSS','Vite'],
+    github: [{ name: 'Repo FE', url: 'https://github.com/Fikri22-create/TMS-Company.git' }], demo: '' },
 ];

@@ -22,7 +22,7 @@ import {
   SiExpress,
   SiWordpress,
   SiPython,
-  SiElementor,
+  SiElementor,z
 } from "react-icons/si";
 
 import { TbApi, TbBrandVscode, TbBrain } from "react-icons/tb";
