@@ -40,15 +40,15 @@ const Modal = ({ open, onClose, children, title }) => {
               background:        'linear-gradient(135deg, rgba(19,23,31,0.92) 0%, rgba(13,16,23,0.95) 100%)',
               backdropFilter:    'blur(28px)',
               WebkitBackdropFilter: 'blur(28px)',
-              border:            '1px solid rgba(99,102,241,0.2)',
-              boxShadow:         '0 0 60px rgba(99,102,241,0.08), 0 40px 80px rgba(0,0,0,0.7)',
+              border:            '1px solid rgba(0,0,0,0.2)',
+              boxShadow:         '0 0 60px rgba(0,0,0,0.08), 0 40px 80px rgba(0,0,0,0.7)',
               maxHeight:         '90vh',
             }}
           >
 
             <div
               className="absolute top-0 left-0 right-0 h-px"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.6), rgba(129,140,248,0.4), transparent)' }}
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(0,0,0,0.6), rgba(0,0,0,0.4), transparent)' }}
             />
 
 
@@ -62,8 +62,8 @@ const Modal = ({ open, onClose, children, title }) => {
                 className="p-2 rounded-xl text-ink-muted transition-all duration-200"
                 style={{ background: 'transparent' }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(99,102,241,0.08)';
-                  e.currentTarget.style.color = '#6366f1';
+                  e.currentTarget.style.background = 'rgba(0,0,0,0.08)';
+                  e.currentTarget.style.color = '#000000';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = 'transparent';

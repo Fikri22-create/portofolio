@@ -4,44 +4,34 @@ import { NAV_ITEMS } from '../../constants/navigation';
 import { cn } from '../../utils/cn';
 
 const MobileNavbar = () => (
-  <nav
-    className="md:hidden fixed bottom-2 left-2 right-2 z-50 mx-auto max-w-[calc(100vw-1rem)] rounded-2xl px-1.5 py-2 flex items-center justify-between gap-1"
-    style={{
-      background: 'linear-gradient(135deg, rgba(13,16,23,0.92) 0%, rgba(8,9,13,0.95) 100%)',
-      backdropFilter: 'blur(28px)',
-      WebkitBackdropFilter: 'blur(28px)',
-      border: '1px solid rgba(255,255,255,0.07)',
-      boxShadow: '0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(99,102,241,0.04)',
-      paddingBottom: 'calc(0.5rem + env(safe-area-inset-bottom))',
-    }}
-  >
+  <nav className="md:hidden fixed bottom-4 left-4 right-4 z-50 rounded-2xl px-1.5 py-2 flex items-center justify-between gap-1 bg-bg-primary/95 backdrop-blur-xl border border-white/10 shadow-card-lg pb-[calc(0.5rem+env(safe-area-inset-bottom))]">
     {NAV_ITEMS.map(({ label, path, icon: Icon }) => (
       <NavLink
         key={path}
         to={path}
         end={path === '/'}
-        className="flex-1 min-w-0 flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-xl text-[10px] transition-all duration-200 relative"
+        className="flex-1 min-w-0 flex flex-col items-center gap-1 px-1 py-1.5 rounded-xl text-[10px] transition-all duration-200 relative group"
       >
         {({ isActive }) => (
           <>
             {isActive && (
               <motion.span
                 layoutId="mobileActivePill"
-                className="absolute inset-0 rounded-xl"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(99,102,241,0.14), rgba(79,70,229,0.08))',
-                  border:     '1px solid rgba(99,102,241,0.2)',
-                }}
+                className="absolute inset-0 rounded-xl bg-white/5 border border-white/5"
                 transition={{ type: 'spring', stiffness: 400, damping: 35 }}
               />
             )}
             <Icon
-              className={cn('text-lg relative z-10 transition-all duration-200', isActive ? 'drop-shadow-[0_0_6px_rgba(99,102,241,0.9)]' : '')}
-              style={isActive ? { color: '#6366f1' } : { color: '#4a5568' }}
+              className={cn(
+                'text-xl relative z-10 transition-all duration-200', 
+                isActive ? 'text-accent-primary drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'text-text-secondary group-hover:text-text-primary'
+              )}
             />
             <span
-              className="font-medium relative z-10 tracking-wide"
-              style={isActive ? { color: '#818cf8' } : { color: '#4a5568' }}
+              className={cn(
+                'font-medium relative z-10 tracking-wide',
+                isActive ? 'text-text-primary' : 'text-text-secondary group-hover:text-text-primary'
+              )}
             >
               {label}
             </span>

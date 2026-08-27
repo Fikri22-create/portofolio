@@ -31,16 +31,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             maxWidth:          '420px',
           },
           success: {
-            iconTheme: { primary: '#6366f1', secondary: '#08090d' },
-            style: { border: '1px solid rgba(99,102,241,0.25)' },
+            iconTheme: { primary: '#000000', secondary: '#08090d' },
+            style: { border: '1px solid rgba(0,0,0,0.25)' },
           },
           error: {
             iconTheme: { primary: '#f87171', secondary: '#08090d' },
             style: { border: '1px solid rgba(248,113,113,0.25)' },
           },
           loading: {
-            iconTheme: { primary: '#6366f1', secondary: '#08090d' },
-            style: { border: '1px solid rgba(99,102,241,0.2)' },
+            iconTheme: { primary: '#000000', secondary: '#08090d' },
+            style: { border: '1px solid rgba(0,0,0,0.2)' },
           },
         }}
       />

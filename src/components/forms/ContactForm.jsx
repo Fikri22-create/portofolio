@@ -7,15 +7,12 @@ const initial = { name: '', email: '', message: '' };
 
 const Field = ({ label, error, children }) => (
   <label className="block">
-    <span
-      className="text-[10px] uppercase tracking-[0.2em] font-mono"
-      style={{ color: '#4a5568' }}
-    >
+    <span className="text-xs uppercase tracking-widest font-semibold text-text-tertiary mb-2 block">
       {label}
     </span>
-    <div className="mt-2">{children}</div>
+    <div>{children}</div>
     {error && (
-      <span className="text-[11px] mt-2 block" style={{ color: '#f87171' }}>
+      <span className="text-xs text-rose-error mt-2 block font-medium">
         {error}
       </span>
     )}
@@ -23,26 +20,29 @@ const Field = ({ label, error, children }) => (
 );
 
 const ContactForm = ({ onSuccess }) => {
-  const [form,    setForm]    = useState(initial);
+  const [form, setForm] = useState(initial);
   const [loading, setLoading] = useState(false);
-  const [errors,  setErrors]  = useState({});
+  const [errors, setErrors] = useState({});
 
   const update = (key) => (e) => setForm((p) => ({ ...p, [key]: e.target.value }));
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())    e.name    = 'Please enter your name';
-    if (!form.email.trim())   e.email   = 'Email is required';
+    if (!form.name.trim()) e.name = 'Please enter your name';
+    if (!form.email.trim()) e.email = 'Email is required';
     else if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = 'Please enter a valid email';
     if (!form.message.trim()) e.message = 'Message cannot be empty';
-    else if (form.message.trim().length < 10)     e.message = 'Message must be at least 10 characters';
+    else if (form.message.trim().length < 10) e.message = 'Message must be at least 10 characters';
     setErrors(e);
     return Object.keys(e).length === 0;
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!validate()) { toast.error('Please check the form fields'); return; }
+    if (!validate()) {
+      toast.error('Please check the form fields');
+      return;
+    }
 
     const toastId = toast.loading('Sending your message…');
     try {
@@ -67,20 +67,14 @@ const ContactForm = ({ onSuccess }) => {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-3xl p-6 md:p-8 space-y-5"
-      style={{
-        background:        'linear-gradient(135deg, rgba(19,23,31,0.8) 0%, rgba(13,16,23,0.75) 100%)',
-        backdropFilter:    'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
-        border:            '1px solid rgba(99,102,241,0.15)',
-      }}
+      className="card-lg space-y-5"
     >
-      <Field label="Your name" error={errors.name}>
+      <Field label="Name" error={errors.name}>
         <input
           type="text"
           value={form.name}
           onChange={update('name')}
-          className="cf-input"
+          className="input-field"
           placeholder="Fikri"
         />
       </Field>
@@ -89,8 +83,8 @@ const ContactForm = ({ onSuccess }) => {
           type="email"
           value={form.email}
           onChange={update('email')}
-          className="cf-input"
-          placeholder="fikri@example.com"
+          className="input-field"
+          placeholder="example@gmail.com"
         />
       </Field>
       <Field label="Message" error={errors.message}>
@@ -98,7 +92,7 @@ const ContactForm = ({ onSuccess }) => {
           rows={5}
           value={form.message}
           onChange={update('message')}
-          className="cf-input resize-none"
+          className="input-field resize-none"
           placeholder="Tell me about your project…"
         />
       </Field>
@@ -106,7 +100,7 @@ const ContactForm = ({ onSuccess }) => {
         type="submit"
         disabled={loading}
         className="btn-primary w-full justify-center"
-        style={{ opacity: loading ? 0.7 : 1 }}
+        style={{ opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
       >
         {loading ? 'Sending…' : <><HiOutlinePaperAirplane /> Send message</>}
       </button>

@@ -1,3 +1,5 @@
+import { title } from "framer-motion/client";
+
 export const CERTIFICATES = [
   {
     id: 1,
@@ -100,5 +102,17 @@ export const CERTIFICATES = [
     title: 'Software Development Concepts',
     description: 'Core concepts of modern software development.',
     file: '/certificates/konsep.pdf'
-  }
+  },
+  {
+    id: 18,
+    title: 'Introduction to Golang',
+    description: 'Basic concepts and fundamentals of Go (Golang) programming language.',
+    file: '/certificates/sertifikat_intro golang.pdf'
+  },
+  {
+    id: 19,
+    title: 'Go-Lang Basics',
+    description: 'Core syntax, fundamentals, and essential concepts of Go (Golang).',
+    file: '/certificates/sertifikat Golang Basics.pdf'
+  },
 ];

@@ -1,10 +1,12 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi2';
 
-const ImageSlider = ({ images, title }) => {
+const ImageSlider = ({ images, title, autoPlay = false }) => {
   const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const total = images.length;
   const hasMultiple = total > 1;
+  const autoPlayIntervalRef = useRef(null);
 
   const goTo = useCallback((index) => {
     setCurrent(index);
@@ -17,6 +19,21 @@ const ImageSlider = ({ images, title }) => {
   const next = useCallback(() => {
     setCurrent((c) => (c === total - 1 ? 0 : c + 1));
   }, [total]);
+
+
+  useEffect(() => {
+    if (!hasMultiple || !autoPlay || isHovered) return;
+
+    autoPlayIntervalRef.current = setInterval(() => {
+      setCurrent((c) => (c === total - 1 ? 0 : c + 1));
+    }, 4000);
+
+    return () => {
+      if (autoPlayIntervalRef.current) {
+        clearInterval(autoPlayIntervalRef.current);
+      }
+    };
+  }, [hasMultiple, autoPlay, isHovered, total]);
 
   useEffect(() => {
     if (current >= total) setCurrent(0);
@@ -36,7 +53,11 @@ const ImageSlider = ({ images, title }) => {
   }
 
   return (
-    <div className="relative w-full h-full group/slider">
+    <div
+      className="relative w-full h-full group/slider"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="relative w-full h-full overflow-hidden">
         <div
           className="flex h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -94,8 +115,8 @@ const ImageSlider = ({ images, title }) => {
             onClick={(e) => { e.stopPropagation(); goTo(i); }}
             className="w-1.5 h-1.5 rounded-full transition-all duration-300"
             style={{
-              background: i === current ? '#6366f1' : 'rgba(255,255,255,0.4)',
-              boxShadow: i === current ? '0 0 8px rgba(99,102,241,0.6)' : 'none',
+              background: i === current ? '#000000' : 'rgba(255,255,255,0.4)',
+              boxShadow: i === current ? '0 0 8px rgba(0,0,0,0.6)' : 'none',
               transform: i === current ? 'scale(1.2)' : 'scale(1)',
             }}
             aria-label={`Go to image ${i + 1}`}

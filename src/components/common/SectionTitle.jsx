@@ -2,40 +2,30 @@ import { motion } from 'framer-motion';
 
 const SectionTitle = ({ eyebrow, title, description, align = 'left' }) => (
   <motion.header
-    initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-    whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-    className={align === 'center' ? 'text-center mx-auto max-w-2xl' : 'max-w-2xl'}
+    transition={{ duration: 0.5 }}
+    className={align === 'center' ? 'text-center mx-auto max-w-2xl' : 'max-w-3xl'}
   >
     {eyebrow && (
       <motion.span
-        initial={{ opacity: 0, x: -14 }}
+        initial={{ opacity: 0, x: -8 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] font-mono mb-4"
-        style={{ color: '#6366f1' }}
+        transition={{ duration: 0.4, delay: 0.05 }}
+        className="inline-flex items-center gap-2.5 text-xs uppercase tracking-widest font-semibold mb-4 text-accent-primary"
       >
-        <span
-          className="w-5 h-px"
-          style={{ background: 'linear-gradient(90deg, #6366f1, transparent)' }}
-        />
+        <span className="w-4 h-0.5 bg-gradient-to-r from-accent-primary to-transparent" />
         {eyebrow}
-        <span
-          className="w-5 h-px"
-          style={{ background: 'linear-gradient(90deg, transparent, #6366f1)' }}
-        />
+        <span className="w-4 h-0.5 bg-gradient-to-l from-accent-primary to-transparent" />
       </motion.span>
     )}
-    <h2
-      className="font-display text-3xl md:text-4xl font-semibold leading-tight"
-      style={{ color: '#f1f2f4' }}
-    >
+    <h2 className="text-4xl md:text-5xl font-bold text-text-primary leading-tight mb-4">
       {title}
     </h2>
     {description && (
-      <p className="mt-4 text-sm leading-relaxed" style={{ color: '#8891a4', maxWidth: '48ch' }}>
+      <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
         {description}
       </p>
     )}

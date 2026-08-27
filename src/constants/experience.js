@@ -4,7 +4,7 @@ export const getYearsOfExperience = () => {
   const now = new Date();
   const diffMs = now - START_DATE;
   const diffYears = diffMs / (1000 * 60 * 60 * 24 * 365.25);
-  return Math.floor(diffYears);
+  return Math.round(diffYears);
 };
 
 export const getExperienceTrend = () => {

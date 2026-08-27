@@ -5,7 +5,7 @@ const Loader = () => (
     <div className="relative w-16 h-16">
       <div
         className="absolute inset-0 rounded-full"
-        style={{ border: '1px solid rgba(99,102,241,0.12)' }}
+        style={{ border: '1px solid rgba(0,0,0,0.12)' }}
       />
       <motion.div
         animate={{ rotate: 360 }}
@@ -13,15 +13,15 @@ const Loader = () => (
         className="absolute inset-0 rounded-full"
         style={{
           border:         '2px solid transparent',
-          borderTopColor: '#6366f1',
-          borderRightColor: '#818cf8',
-          filter:         'drop-shadow(0 0 6px rgba(99,102,241,0.7))',
+          borderTopColor: '#000000',
+          borderRightColor: '#000000',
+          filter:         'drop-shadow(0 0 6px rgba(0,0,0,0.7))',
         }}
       />
       <div
         className="absolute inset-0 rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%)',
         }}
       />
     </div>

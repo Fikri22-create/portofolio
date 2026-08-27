@@ -2,32 +2,23 @@ import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
 
 const FilterTabs = ({ tabs, active, onChange }) => (
-  <div className="flex flex-wrap gap-1.5">
+  <div className="flex flex-wrap gap-2">
     {tabs.map((t) => (
       <button
         key={t}
         onClick={() => onChange(t)}
         className={cn(
-          'relative px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 border',
-          active === t ? 'text-white font-semibold border-transparent' : 'border-line hover:border-accent/30'
+          'relative px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 border',
+          active === t
+            ? 'text-white bg-accent-primary border-accent-primary shadow-glow'
+            : 'text-text-secondary bg-transparent border-white/10 hover:border-accent-primary/30 hover:text-text-primary'
         )}
-        style={active !== t ? { background: 'transparent', color: '#4a5568' } : {}}
-        onMouseEnter={e => {
-          if (active !== t) e.currentTarget.style.color = '#8891a4';
-        }}
-        onMouseLeave={e => {
-          if (active !== t) e.currentTarget.style.color = '#4a5568';
-        }}
       >
         {active === t && (
           <motion.span
             layoutId="filterPill"
-            className="absolute inset-0 rounded-full -z-10"
-            style={{
-              background:  'linear-gradient(135deg, #6366f1, #4f46e5)',
-              boxShadow:   '0 0 16px rgba(99,102,241,0.35)',
-            }}
-            transition={{ type: 'spring', stiffness: 380, damping: 35 }}
+            className="absolute inset-0 rounded-lg -z-10 bg-accent-primary"
+            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
           />
         )}
         {t}
@@ -37,3 +28,4 @@ const FilterTabs = ({ tabs, active, onChange }) => (
 );
 
 export default FilterTabs;
+

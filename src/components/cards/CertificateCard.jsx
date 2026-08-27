@@ -1,74 +1,47 @@
 import { motion } from 'framer-motion';
 import { HiOutlineEye } from 'react-icons/hi2';
 
-const CertificateCard = ({ certificate, onOpen, index }) => (
-  <motion.button
-    onClick={() => onOpen(certificate)}
-    initial={{ opacity: 0, y: 24, scale: 0.96 }}
-    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-    whileHover={{ y: -6 }}
-    className="group relative overflow-hidden rounded-2xl text-left w-full min-w-0 neon-border"
-    style={{
-      background:     'linear-gradient(145deg, rgba(19,23,31,0.85) 0%, rgba(13,16,23,0.75) 100%)',
-      backdropFilter: 'blur(16px)',
-      border:         '1px solid rgba(255,255,255,0.07)',
-      transition:     'border-color 0.3s ease, box-shadow 0.3s ease',
-    }}
-    onMouseEnter={e => {
-      e.currentTarget.style.borderColor = 'rgba(99,102,241,0.25)';
-      e.currentTarget.style.boxShadow   = '0 0 40px -10px rgba(99,102,241,0.18), 0 24px 60px -20px rgba(0,0,0,0.7)';
-    }}
-    onMouseLeave={e => {
-      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)';
-      e.currentTarget.style.boxShadow   = 'none';
-    }}
-  >
+const CertificateCard = ({ certificate, index }) => {
+  const handlePreview = () => {
+    window.open(certificate.file, '_blank');
+  };
 
-    <div
-      className="absolute top-0 left-0 right-0 h-px opacity-60"
-      style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)' }}
-    />
+  return (
+    <motion.button
+      onClick={handlePreview}
+      initial={{ opacity: 0, y: 20, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05, duration: 0.4 }}
+      whileHover={{ y: -4 }}
+      className="group relative overflow-hidden rounded-xl text-left w-full h-full flex flex-col bg-bg-secondary border border-white/5 shadow-card hover:border-white/10 hover:shadow-card-lg transition-all"
+    >
+      <div className="p-5 flex flex-col h-full w-full">
+        <div className="relative w-full aspect-[4/3] mb-5 overflow-hidden rounded-lg bg-bg-tertiary border border-white/5">
+          <iframe
+            src={`${certificate.file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`}
+            className="w-full h-full object-cover pointer-events-none"
+            title={certificate.title}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="text-sm px-4 py-2 rounded-lg font-semibold flex items-center gap-2 bg-text-primary text-bg-primary shadow-lg hover:opacity-90">
+              <HiOutlineEye />
+              Preview
+            </span>
+          </div>
+        </div>
 
-
-    <div className="relative w-full h-56 overflow-hidden rounded-t-xl bg-bg">
-      <iframe
-        src={`${certificate.file}#toolbar=0&view=FitH&zoom=page-width`}
-        className="w-full h-full"
-        title={certificate.title}
-      />
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 grid place-items-center"
-        style={{ background: 'rgba(13,16,23,0.6)', backdropFilter: 'blur(4px)' }}
-      >
-        <span
-          className="text-xs px-4 py-2 rounded-xl font-semibold flex items-center gap-2"
-          style={{
-            background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
-            color:      '#ffffff',
-            boxShadow:  '0 0 20px rgba(99,102,241,0.35)',
-          }}
-        >
-          <HiOutlineEye />
-          Preview
-        </span>
+        <div className="flex-1 flex flex-col">
+          <p className="font-semibold text-text-primary text-sm leading-tight mb-2">
+            {certificate.title}
+          </p>
+          <p className="text-xs text-text-secondary leading-relaxed line-clamp-2">
+            {certificate.description}
+          </p>
+        </div>
       </div>
-    </div>
-
-
-    <div className="p-4 space-y-1.5">
-      <p
-        className="font-display font-medium leading-tight transition-colors duration-200"
-        style={{ color: '#f1f2f4' }}
-      >
-        {certificate.title}
-      </p>
-      <p className="text-xs leading-relaxed" style={{ color: '#8891a4' }}>
-        {certificate.description}
-      </p>
-    </div>
-  </motion.button>
-);
+    </motion.button>
+  );
+};
 
 export default CertificateCard;

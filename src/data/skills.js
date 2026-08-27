@@ -22,7 +22,8 @@ import {
   SiExpress,
   SiWordpress,
   SiPython,
-  SiElementor,z
+  SiElementor,
+  SiGo
 } from "react-icons/si";
 
 import { TbApi, TbBrandVscode, TbBrain } from "react-icons/tb";
@@ -39,6 +40,7 @@ export const TOOLS = [
   { name: "Bootstrap", icon: SiBootstrap, color: "#7952b3" },
   { name: "MySQL", icon: SiMysql, color: "#00758f" },
   { name: "python", icon: SiPython, color: "#3776ab" },
+  { name: "Go", icon: SiGo, color: "#00add8" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MongoDB", icon: SiMongodb, color: "#47a248" },
   { name: "Artificial Intelligence", icon: TbBrain, color: "#3776ab" },
